@@ -2,8 +2,8 @@
 echo '
 <div class="navbar">
 <ul>
-    <li><a href="./index.html" class="logo_img"><img src="./images/logo.jpg" alt="home page logo"></a></li>
-    <li><a href="./plants_classification.html">Plants Classification</a></li>
+    <li><a href="./main.php" class="logo_img"><img src="./images/logo.jpg" alt="home page logo"></a></li>
+    <li><a href="./plants_classification.php">Plants Classification</a></li>
     <li>
         <div class="dropdown">
             <button type="button" class="dropbtn">
@@ -22,7 +22,7 @@ echo '
 </ul>
 <div>
     <ul class="right-bar">
-        <li><a href="./about_me_hub.html">About us</a></li>
+        <li><a href="./about_me_hub.php">About us</a></li>
         <li><a href="./login.html">Login/ Sign up</a></li>
     </ul>
 </div>
