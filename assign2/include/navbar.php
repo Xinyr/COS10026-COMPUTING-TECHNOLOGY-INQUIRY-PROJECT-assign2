@@ -17,7 +17,7 @@ echo '
         </div>
     </li>
     <li><a href="./enquiry.html">Enquiry</a></li>
-    <li><a href="./identify_page.html">Identify</a></li>
+    <li><a href="./identify_page.php">Identify</a></li>
     <li><a href="./contribution.html">Contribute</a></li>
 </ul>
 <div>
