@@ -33,7 +33,7 @@ $plantImages = [
     ["path" => "images/SweetBriarRose3.jpg", "alt" => "Sweetbriar Rose - Image 3"]
 ];
 
-}
+
 ?>
     <header>
         <h1><?php echo $pageTitle; ?></h1>
