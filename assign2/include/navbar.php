@@ -16,9 +16,15 @@ echo '
             </div>
         </div>
     </li>
+<<<<<<< Updated upstream
     <li><a href="./enquiry.php">Enquiry</a></li>
     <li><a href="./identify_page.html">Identify</a></li>
     <li><a href="./contribution.php">Contribute</a></li>
+=======
+    <li><a href="./enquiry.html">Enquiry</a></li>
+    <li><a href="./identify_page.php">Identify</a></li>
+    <li><a href="./contribution.html">Contribute</a></li>
+>>>>>>> Stashed changes
 </ul>
 <div>
     <ul class="right-bar">
