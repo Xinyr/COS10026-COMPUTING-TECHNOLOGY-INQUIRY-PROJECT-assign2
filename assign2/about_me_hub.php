@@ -33,7 +33,7 @@
                   <img class="flip_profile_img" src="./images/kaiseng.jpg" alt="Kai Seng">
                 </div>
                 <div class="flip_card_back">
-                  <h1><a href="./kaiseng.html">Kai Seng</a></h1> 
+                  <h1><a href="./kaiseng.php">Kai Seng</a></h1> 
                   <p>Group member</p> 
                 </div>
               </div>
