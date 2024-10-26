@@ -12,7 +12,7 @@ echo '
             <div class="dropdown-content">
                 <a class="dropdown_link" href="./Tutorialnew.html">How to make a herbarium</a>
                 <a class="dropdown_link" href="./Tools.html">Tools needed</a>
-                <a class="dropdown_link" href="./care.html">How to care for your herbarium</a>
+                <a class="dropdown_link" href="./care.php">How to care for your herbarium</a>
             </div>
         </div>
     </li>
