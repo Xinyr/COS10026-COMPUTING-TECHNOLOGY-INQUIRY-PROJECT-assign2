@@ -44,7 +44,7 @@
                   <img class="flip_profile_img" src="./images/Faridz.jpg" alt="Faridz">
                 </div>
                 <div class="flip_card_back">
-                  <h1><a href="./faridz.html">Faridz</a></h1> 
+                  <h1><a href="./faridz.php">Faridz</a></h1> 
                   <p>Group member</p>  
                 </div>
               </div>
