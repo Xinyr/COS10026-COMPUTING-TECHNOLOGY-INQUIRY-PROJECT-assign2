@@ -47,3 +47,52 @@ if(mysqli_query($conn, $sql)) {
 // Close the connection
 mysqli_close($conn);
 ?>
+
+<?php 
+// Database Credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contribution_DB";
+
+//Create a connection
+$conn = mysqli_connect($servername, $username, $password);
+
+//check the connection
+if (!$conn) {
+    die("Connection failed: ". mysqli_connect_error());
+}
+
+// Create the database if it does not exist
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if (mysqli_query($conn, $sql)) {
+    echo "Database created succesfiully (or already exists).<br>";
+} else {
+    echo "Error Creating database: " . mysqli_error($conn);
+}
+
+//select the database
+mysqli_select_db($conn, $dbname);
+
+//SQL to create the table
+$sql = "CREATE TABLE IF NOT EXISTS Contributions (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    plantName VARCHAR(25) NOT NULL,
+    plantFamily VARCHAR(50) NOT NULL,
+    plantGenus VARCHAR(50) NOT NULL,
+    plantSpecies VARCHAR(50) NOT NULL,
+    freshLeafPhoto VARCHAR(100) NOT NULL,
+    herbariumPhoto VARCHAR(100) NOT NULL,
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+// Exercute the query to create the table
+if (mysqli_query($conn, $sql)) {
+    echo "Table Contributions created successfully (or already exists).<br>";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+// Close the connection
+mysqli_close($conn);
+?>
