@@ -11,7 +11,6 @@
 
 <body>
     <?php include "./include/navbar.php"; ?>
-    <?php include ('confirm.php'); ?>
     <?php include ('Database.php'); ?>
 
     <div class="body_enquiry">
@@ -26,7 +25,7 @@
             <div class="enquiry_form-section">
                 <h2 class="enquiry_h2">Enquiry Form</h2>
 
-                <form class="form_enquiry" action="submit-enquiry" method="post">
+                <form class="form_enquiry" action="Enquiry-confirm.php" method="post">
                     <label class="label_enquiry" for="firstName">First Name:</label>
                     <input class="input_enquiry" type="text" id="firstName" name="firstName" maxlength="25" pattern="[A-Za-z]+" required
                         placeholder="e.g. John">

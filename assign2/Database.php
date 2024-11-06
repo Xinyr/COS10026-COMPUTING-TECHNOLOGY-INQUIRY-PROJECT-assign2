@@ -34,6 +34,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Enquiry_Form (
     city VARCHAR(50),
     state VARCHAR(30),
     postcode VARCHAR(5),
+    phone INT(10),
     tutorial VARCHAR(20) 
 )"; 
 
