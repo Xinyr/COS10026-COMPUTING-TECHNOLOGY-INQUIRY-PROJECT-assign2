@@ -3,10 +3,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Enquiry_DB";
+$dbname = "Herbarium_DB";
 
 // Create connection
-$conn = mysqli_connect($servername, $usernqame, $password);
+$conn = mysqli_connect($servername, $username, $password);
 
 //check conneciton
 if(!$conn) {
@@ -42,33 +42,6 @@ if(mysqli_query($conn, $sql)) {
     echo "Table Enquiry_Form created succesfully (or already exists). <br>";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
-}
-
-// Close the connection
-mysqli_close($conn);
-?>
-
-<?php 
-// Database Credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "contribution_DB";
-
-//Create a connection
-$conn = mysqli_connect($servername, $username, $password);
-
-//check the connection
-if (!$conn) {
-    die("Connection failed: ". mysqli_connect_error());
-}
-
-// Create the database if it does not exist
-$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
-if (mysqli_query($conn, $sql)) {
-    echo "Database created succesfiully (or already exists).<br>";
-} else {
-    echo "Error Creating database: " . mysqli_error($conn);
 }
 
 //select the database
