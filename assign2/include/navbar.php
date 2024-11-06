@@ -10,26 +10,20 @@ echo '
                 Tutorial
             </button>
             <div class="dropdown-content">
-                <a class="dropdown_link" href="./Tutorialnew.html">How to make a herbarium</a>
-                <a class="dropdown_link" href="./Tools.html">Tools needed</a>
+                <a class="dropdown_link" href="./Tutorialnew.php">How to make a herbarium</a>
+                <a class="dropdown_link" href="./Tools.php">Tools needed</a>
                 <a class="dropdown_link" href="./care.php">How to care for your herbarium</a>
             </div>
         </div>
     </li>
-<<<<<<< Updated upstream
     <li><a href="./enquiry.php">Enquiry</a></li>
-    <li><a href="./identify_page.html">Identify</a></li>
-    <li><a href="./contribution.php">Contribute</a></li>
-=======
-    <li><a href="./enquiry.html">Enquiry</a></li>
     <li><a href="./identify_page.php">Identify</a></li>
-    <li><a href="./contribution.html">Contribute</a></li>
->>>>>>> Stashed changes
+    <li><a href="./contribution.php">Contribute</a></li>
 </ul>
 <div>
     <ul class="right-bar">
         <li><a href="./about_me_hub.php">About us</a></li>
-        <li><a href="./login.html">Login/ Sign up</a></li>
+        <li><a href="./login.php">Login/ Sign up</a></li>
     </ul>
 </div>
 </div>

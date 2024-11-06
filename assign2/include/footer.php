@@ -54,7 +54,7 @@ echo '
         </div>
         <div id="enhancements">
             <a href="https://youtu.be/BPt57OjBl8I">Website Demo</a>
-            <a href="./enhancements.html">Enhancements</a>
+            <a href="./enhancements.php">Enhancements</a>
         </div>
         <div id="copyright">
             <p>&copy; Herbarium 2024. All rights reserved</p>
