@@ -11,9 +11,9 @@
 
 <body>
     <?php include "./include/navbar.php"; ?>
-    <?php include ('Enquiry-connection.php'); ?>
+    <?php include ('confirm.php'); ?>
     <?php include ('Database.php'); ?>
-    
+
     <div class="body_enquiry">
         <div class="enquiry_image-container">
             <!-- Left section with the image -->

@@ -16,7 +16,7 @@ if(!$conn) {
 // Create the database if it doesn't exist
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if(mysqli_query($conn, $sql)) {
-    echo "Database created succesfully (or already exists). <br>";    
+    echo "";    
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }
@@ -39,7 +39,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Enquiry_Form (
 
 // Execute the query to create the table
 if(mysqli_query($conn, $sql)) {
-    echo "Table Enquiry_Form created succesfully (or already exists). <br>";
+    echo "";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
@@ -61,7 +61,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Contributions (
 
 // Exercute the query to create the table
 if (mysqli_query($conn, $sql)) {
-    echo "Table Contributions created successfully (or already exists).<br>";
+    echo "";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
