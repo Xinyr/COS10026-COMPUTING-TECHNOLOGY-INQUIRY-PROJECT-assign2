@@ -29,7 +29,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = Herbarium_DB";
+            $dbname = "Herbarium_DB";
 
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
