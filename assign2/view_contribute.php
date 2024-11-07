@@ -6,8 +6,10 @@
     <meta name="author" content="Kai Seng Bong"/>
     <meta name="description" content="Assignment 2"/>
     <meta name="keywords" content="Herbarium, View_Contribute"/>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-
+<?php include "./include/navbar.php" ; ?>
 
 <body>
 <h1>Contruibution Page</h1>
@@ -96,5 +98,6 @@
             mysqli_close($conn);
         ?>
     </table>
+    <?php include "./include/footer.php"; ?>
 </body>
 </html>
