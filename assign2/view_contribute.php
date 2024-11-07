@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<?php include "./include/navbar.php" ; ?>
+
 
 <body>
 <h1>Contruibution Page</h1>
@@ -98,6 +98,6 @@
             mysqli_close($conn);
         ?>
     </table>
-    <?php include "./include/footer.php"; ?>
+   
 </body>
 </html>
