@@ -68,6 +68,11 @@
                     mysqli_query($conn, $sql);
                     mysqli_close($conn);
                 ?>
+
+                <!-- Return Button -->
+                 <div class="return-button-container">
+                    <a href="Enquiry-register.php" class="Enquiry-confirm-button-return">Return to Enquiry</a>
+                 </div>
             </div>
         </div>
     </div>
