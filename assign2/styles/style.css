@@ -1054,6 +1054,21 @@ select {
 	background-color: #d32f2f;
 }
 
+.Enquiry-confirm-button-return {
+	display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.Enquiry-confirm-button-return:hover {
+	background-color: #45a049;
+}
+
 /* Contribution-section */
 
 .body_contribution {

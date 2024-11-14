@@ -39,7 +39,7 @@
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
-                    $dbname = "Enquiry_DB";
+                    $dbname = "Herbarium_DB";
 
                     // Establish connection
                     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -65,8 +65,14 @@
                     }
 
                     // Close the connection
+                    mysqli_query($conn, $sql);
                     mysqli_close($conn);
                 ?>
+
+                <!-- Return Button -->
+                 <div class="return-button-container">
+                    <a href="Enquiry-register.php" class="Enquiry-confirm-button-return">Return to Enquiry</a>
+                 </div>
             </div>
         </div>
     </div>
