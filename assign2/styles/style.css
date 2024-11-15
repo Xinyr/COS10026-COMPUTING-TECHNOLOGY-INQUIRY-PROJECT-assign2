@@ -1938,3 +1938,17 @@ figcaption {
 	margin-top: auto;
 	text-decoration: none;
 }
+.ViewEnquiry{
+	margin-top: 40px;
+}
+.Enquiry_Table{
+	border-collapse: collapse;
+	text-align: center;
+}
+.Enquiry_Table th{
+	width: 200px;
+	border: solid black 1px;
+}
+.Enquiry_Table tr td{
+	border: solid black 1px;
+}
