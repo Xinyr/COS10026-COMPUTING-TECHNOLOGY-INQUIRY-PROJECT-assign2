@@ -29,7 +29,7 @@
                         <div class="padding20">
                         <button type="submit">Login</button>
                         </div><br>
-                        <a href="./register.html">Havent made an account yet?</a>
+                        <a href="./register.php">Havent made an account yet?</a>
                     </form>
                 </div>
             </div>

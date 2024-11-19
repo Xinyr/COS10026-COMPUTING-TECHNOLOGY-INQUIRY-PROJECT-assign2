@@ -49,6 +49,25 @@ if(mysqli_query($conn, $sql)) {
 mysqli_select_db($conn, $dbname);
 
 //SQL to create the table
+$sql = "CREATE TABLE IF NOT EXISTS Accounts (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    1name VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    usersname VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    passkey VARCHAR(20) NOT NULL
+)";
+
+// Exercute the query to create the table
+if (mysqli_query($conn, $sql)) {
+    echo "";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+    //select the database
+mysqli_select_db($conn, $dbname);
+
+//SQL to create the table
 $sql = "CREATE TABLE IF NOT EXISTS Contributions (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     plantName VARCHAR(25) NOT NULL,
@@ -66,6 +85,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
+
 
 // Close the connection
 mysqli_close($conn);
