@@ -18,18 +18,18 @@
         </div>
         <div class="logincontainer">
             <div class="loginform">
-            <form id="form" method="post" action="mailto:104396635@students.swinburne.edu.my">
+            <form id="form" method="post" action="register-confirm.php">
                     <h2>Register here</h2>
                     <label for="1name">First Name:</label>
                     <input type="text" pattern="[A-Za-z]*" name="1name" id="1name" required="required" placeholder="Letters Only"> <br> <br>
                     <label for="lastname">Last Name:</label>
                     <input type="text" pattern="[A-Za-z]*" name="lastname" id="lastname" required="required" placeholder="Letters Only"> <br> <br>
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" required="required" placeholder="Name used to login from now on">
+                    <label for="usersname">Username</label>
+                    <input type="text" name="usersname" id="usersname" required="required" placeholder="Name used to login from now on">
                     <label for="email">Email:</label>
                     <input class="logininput" type="email" name="email" id="email" required="required" placeholder="Example@example.example"> <br><br>
-                    <label for="password">Password:</label>
-                    <input class="logininput" type="text" pattern="[A-Za-z]*" name="password" id="password" required="required" placeholder="Letters Only">
+                    <label for="passkey">Password:</label>
+                    <input class="logininput" type="text" pattern="[A-Za-z]*" name="passkey" id="passkey" required="required" placeholder="Letters Only">
                     <br>
                     <div class="padding20">
                         <button type="submit">Register</button>
