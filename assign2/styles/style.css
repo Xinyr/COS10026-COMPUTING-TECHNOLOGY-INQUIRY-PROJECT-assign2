@@ -1952,3 +1952,52 @@ figcaption {
 .Enquiry_Table tr td{
 	border: solid black 1px;
 }
+/* Admin view */
+.admin_page{
+	padding-left: 17%;
+}
+.admin_page h1{
+	font-size: 300%;
+	text-align: center;
+}
+.admin_page h2{
+	font-size: 200%;
+	text-align: center;
+}
+/* Admin Navbar */
+.admin_navbar{
+	z-index: 3;
+	overflow: hidden;
+	background-color: #cccfb9;
+	position: fixed;
+	top: 0;
+	width: 17%;
+	height: 100%;
+	border-radius: 30px;
+	padding-top: 10%;
+	font-size: 130%;
+}
+.center_text{
+	text-align: center;
+}
+.admin_navbar ul{
+	float: left;
+	list-style-type: none;
+	margin: 0.1%;
+	padding: 2px;
+	overflow: hidden;
+}
+.admin_navbar a{
+	margin-left: 30px;
+	margin-top: 10px;
+	display: block;
+	color: #000000;
+	padding: 14px 16px;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+.admin_navbar a:hover {
+	background-color: #1a3300;
+	color: white;
+}
