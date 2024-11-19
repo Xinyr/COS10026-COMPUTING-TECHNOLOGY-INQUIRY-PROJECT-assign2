@@ -12,56 +12,58 @@
 
 
 <body>
-<h1>Contruibution Page</h1>
+    <?php include './include/admin_navbar.php'?>
+    <div class="admin_page">
+        <h1>Contribution Page</h1>
 
-<table border="1">
-        <tr>
-            <th>No</th>
-            <th width="150px">Plant Name</th>
-            <th width="150px">Plant Family</th>
-            <th width="150px">Plant Genus</th>
-            <th width="150px">Plant Species</th>
-            <th width="100px">Photo Upload(Fresh Leaf)</th>
-            <th width="100px">Photo Upload(Herbarium)</th>
+        <table border="1">
+                <tr>
+                    <th>No</th>
+                    <th width="150px">Plant Name</th>
+                    <th width="150px">Plant Family</th>
+                    <th width="150px">Plant Genus</th>
+                    <th width="150px">Plant Species</th>
+                    <th width="100px">Photo Upload(Fresh Leaf)</th>
+                    <th width="100px">Photo Upload(Herbarium)</th>
 
-        </tr>
+                </tr>
 
 
-<?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "Herbarium_DB";
+        <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "Herbarium_DB";
 
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
+                    // Create connection
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-            // Debug: Output a message to confirm connection success
-            echo "<p>Database connection successful.</p>";
+                    // Debug: Output a message to confirm connection success
+                    echo "<p></p>";
 
-            // SQL query
-            $sql = "SELECT * FROM contributions";
-            echo "<p>Executing query: $sql</p>"; // Debug: Output query
+                    // SQL query
+                    $sql = "SELECT * FROM contributions";
+                    echo "<p></p>"; // Debug: Output query
 
-            $result = mysqli_query($conn, $sql);
+                    $result = mysqli_query($conn, $sql);
 
-            // Check if the query executed successfully
-            if (!$result) {
-                die("Query failed: " . mysqli_error($conn));
-            }
+                    // Check if the query executed successfully
+                    if (!$result) {
+                        die("Query failed: " . mysqli_error($conn));
+                    }
 
-            // Check if query returned any rows
-            if (mysqli_num_rows($result) > 0) {
-                // Fetch and display each row
-                while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+                    // Check if query returned any rows
+                    if (mysqli_num_rows($result) > 0) {
+                        // Fetch and display each row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                ?>
 
-              <tr>
+                    <tr>
                         <td><?php echo $no++; ?></td>
                         <td><?php echo htmlspecialchars($row["plantName"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantFamily"]); ?></td>
@@ -86,18 +88,18 @@
                             ?>
                         </td>
                         <td><?php echo htmlspecialchars($row["created_at"]); ?></td>
-             </tr>
+                    </tr>
 
- <?php 
+        <?php 
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>No results found</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='5'>No results found</td></tr>";
-            }
 
-            // Close connection
-            mysqli_close($conn);
+                // Close connection
+                mysqli_close($conn);
         ?>
-    </table>
-   
+        </table>
+    </div>
 </body>
 </html>

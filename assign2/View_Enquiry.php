@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body class="ViewEnquiry">
-<?php include "./include/navbar.php" ?>
+    
+<?php include "./include/admin_navbar.php" ?>
+<div class="admin_page">
 <h1>Enquiry List</h1>
 
 <table class="Enquiry_Table">
@@ -73,6 +75,6 @@
     mysqli_close($conn);
 ?>
 </table>
-<?php include "./include/footer.php"; ?>
+</div>
 </body>
 </html>
