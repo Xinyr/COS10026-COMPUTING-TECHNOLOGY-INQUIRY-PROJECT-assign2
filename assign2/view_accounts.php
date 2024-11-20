@@ -59,6 +59,16 @@
         $sql = "DELETE FROM Accounts WHERE id = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, 'i', $delete_id);
+        $resetSql = "SET @count = 0;
+                 UPDATE Accounts SET id = (@count := @count + 1) ORDER BY id;
+                 ALTER TABLE Accounts AUTO_INCREMENT = 1;";
+        if (mysqli_multi_query($conn, $resetSql)) {
+        do {
+            if ($result = mysqli_store_result($conn)) {
+                mysqli_free_result($result);    
+            }
+        } while (mysqli_next_result($conn));
+    }
     
         // Execute the statement
         if (mysqli_stmt_execute($stmt)) {
@@ -79,14 +89,16 @@
     if (isset($_POST['change_p'])) {
         $user_id = $_POST['user_id'];
         ?>
-        <div class="form">
-            <h2>Change Password for User ID: <?php echo $user_id; ?></h2>
-            <form method="POST" action="">
-                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <label for="new_password">New Password:</label>
-                <input type="password" name="new_password" id="new_password" required>
-                <button type="submit" name="update_password">Update Password</button>
-            </form>
+        <div class="padding20percent">
+            <div class="form">
+                <h2>Change Password for User ID: <?php echo $user_id; ?></h2>
+                <form method="POST" action="">
+                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <label for="new_password">New Password:</label>
+                    <input type="password" name="new_password" id="new_password" required>
+                    <button type="submit" name="update_password">Update Password</button>
+                </form>
+            </div>
         </div>
         <?php
     }
@@ -119,14 +131,16 @@
     if (isset($_POST['change_u'])) {
         $user_id = $_POST['user_id'];
         ?>
-        <div class="form">
-            <h2>Change Username for User ID: <?php echo $user_id; ?></h2>
-            <form method="POST" action="">
-                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <label for="new_username">New Username:</label>
-                <input type="username" name="new_username" id="new_username" required>
-                <button type="submit" name="update_username">Update Username</button>
-            </form>
+        <div class="padding20percent">
+            <div class="form">
+                <h2>Change Username for User ID: <?php echo $user_id; ?></h2>
+                <form method="POST" action="">
+                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <label for="new_username">New Username:</label>
+                    <input type="username" name="new_username" id="new_username" required>
+                    <button type="submit" name="update_username">Update Username</button>
+                </form>
+            </div>
         </div>
         <?php
     }
@@ -167,19 +181,19 @@
                     <td><?php echo htmlspecialchars($row["usersname"]); ?></td>
                     <td><?php echo htmlspecialchars($row["passkey"]); ?></td>
                     <td>
-                        <form method="POST" action="">
+                        <form class="change_admin" method="POST" action="">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                             <button type="submit" name="delete">Delete</button>
                         </form>
                     </td>
                     <td>
-                        <form method="POST" action="">
+                        <form class="change_admin" method="POST" action="">
                             <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
                             <button type="submit" name="change_p">Change Password</button>
                         </form>
                     </td>
                     <td>
-                        <form method="POST" action="">
+                        <form class="change_admin" method="POST" action="">
                             <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
                             <button type="submit" name="change_u">Change Username</button>
                         </form>
