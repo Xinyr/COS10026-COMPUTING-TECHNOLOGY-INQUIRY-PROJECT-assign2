@@ -1938,12 +1938,17 @@ figcaption {
 	margin-top: auto;
 	text-decoration: none;
 }
+/* View Enquiry */
 .ViewEnquiry{
 	margin-top: 40px;
 }
+/* Enquiry Table/Admin View Tables */
 .Enquiry_Table{
 	border-collapse: collapse;
 	text-align: center;
+	background-color: #bceddb;
+	border-radius: 5%;
+	border: solid black 3px;
 }
 .Enquiry_Table th{
 	width: 200px;
