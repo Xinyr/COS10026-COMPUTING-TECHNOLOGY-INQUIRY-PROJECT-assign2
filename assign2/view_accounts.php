@@ -22,6 +22,9 @@
         <th>Email Address</th>
         <th>Username</th>
         <th>Password</th>
+        <th>Delete</th>
+        <th>Change password</th>
+        <th>Change username</th>
     </tr>
 
     <?php
@@ -41,7 +44,117 @@
     // Fetch data from Enquiry_Form table
     $sql = "SELECT * FROM Accounts";  // Ensure this table exists and has data
     $result = mysqli_query($conn, $sql);
-
+    // Delete entry button
+    if (isset($_POST['delete'])) {
+        $delete_id = $_POST['delete_id'];
+    
+        // Database connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    
+        // Prepare the SQL delete statement
+        $sql = "DELETE FROM Accounts WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, 'i', $delete_id);
+    
+        // Execute the statement
+        if (mysqli_stmt_execute($stmt)) {
+            echo "";
+        } else {
+            echo "Error deleting record: " . mysqli_error($conn);
+        }
+    
+    
+        // Close the connection
+        mysqli_stmt_close($stmt);
+    
+        // Refresh the page to update the table
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
+    // Change password
+    if (isset($_POST['change_p'])) {
+        $user_id = $_POST['user_id'];
+        ?>
+        <div class="form">
+            <h2>Change Password for User ID: <?php echo $user_id; ?></h2>
+            <form method="POST" action="">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <label for="new_password">New Password:</label>
+                <input type="password" name="new_password" id="new_password" required>
+                <button type="submit" name="update_password">Update Password</button>
+            </form>
+        </div>
+        <?php
+    }
+    if (isset($_POST['update_password'])) {
+        $user_id = $_POST['user_id'];
+        $new_password = ($_POST['new_password']); // Hash the new password
+    
+        // Database connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    
+        // Prepare SQL query to update password
+        $sql = "UPDATE Accounts SET passkey = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, 'si', $new_password, $user_id);
+    
+        // Execute the query
+        if (mysqli_stmt_execute($stmt)) {
+            echo "";
+        } else {
+            echo "Error updating password: " . mysqli_error($conn);
+        }
+    
+        // Close connection
+        mysqli_stmt_close($stmt);
+    }
+    // Change username
+    if (isset($_POST['change_u'])) {
+        $user_id = $_POST['user_id'];
+        ?>
+        <div class="form">
+            <h2>Change Username for User ID: <?php echo $user_id; ?></h2>
+            <form method="POST" action="">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <label for="new_username">New Username:</label>
+                <input type="username" name="new_username" id="new_username" required>
+                <button type="submit" name="update_username">Update Username</button>
+            </form>
+        </div>
+        <?php
+    }
+    if (isset($_POST['update_username'])) {
+        $user_id = $_POST['user_id'];
+        $new_username = ($_POST['new_username']); // Hash the new password
+    
+        // Database connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    
+        // Prepare SQL query to update password
+        $sql = "UPDATE Accounts SET usersname = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, 'si', $new_username, $user_id);
+    
+        // Execute the query
+        if (mysqli_stmt_execute($stmt)) {
+            echo "";
+        } else {
+            echo "Error updating username: " . mysqli_error($conn);
+        }
+    
+        // Close connection
+        mysqli_stmt_close($stmt);
+    }
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
@@ -53,6 +166,24 @@
                     <td><?php echo htmlspecialchars($row["email"]); ?></td>
                     <td><?php echo htmlspecialchars($row["usersname"]); ?></td>
                     <td><?php echo htmlspecialchars($row["passkey"]); ?></td>
+                    <td>
+                        <form method="POST" action="">
+                            <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" name="delete">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="">
+                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" name="change_p">Change Password</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="">
+                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" name="change_u">Change Username</button>
+                        </form>
+                    </td>
                 </tr>
                 <?php
             }
