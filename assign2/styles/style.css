@@ -2024,3 +2024,20 @@ figcaption {
 .admin_navbar img:hover {
 	filter: invert(1);
 }	
+.change_admin button {
+	display: block;
+	min-height: 30px;
+	width: 100%;
+	background-color: #6b8f71;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: auto;
+}
+.padding20percent{
+	padding-left: 20%;
+	padding-right: 20%;
+}
