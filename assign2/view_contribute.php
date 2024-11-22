@@ -11,12 +11,12 @@
 </head>
 
 
-<body>
+<body class ="view_contribute">
     <?php include './include/admin_navbar.php'?>
     <div class="admin_page">
         <h1>Contribution Page</h1>
 
-        <table border="1">
+        <table class="contribute_table">
                 <tr>
                     <th>No</th>
                     <th width="150px">Plant Name</th>

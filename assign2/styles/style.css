@@ -1969,6 +1969,32 @@ figcaption {
 	font-size: 200%;
 	text-align: center;
 }
+/* View Contribute */
+.contribute_table{
+	margin-top: 40px;
+}
+.view_contribute{
+	margin-top: 40px;
+}
+/* contribute table */
+.contribute_table{
+	border-collapse: collapse;
+	text-align: center;
+	background-color: #bceddb;
+	border-radius: 5%;
+	border: solid black 3px;
+}
+.contribute_table th{
+	width: 250px;
+	border: solid black 1px;
+}
+.contribute_table tr td{
+	text-align: center;
+	border: solid black 1px;
+}
+.contribute_table tr:hover {
+    background-color: #e9ecef;
+}
 /* Admin Navbar */
 .admin_navbar{
 	z-index: 3;
