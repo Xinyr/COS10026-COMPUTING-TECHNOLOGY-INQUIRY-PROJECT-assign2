@@ -51,13 +51,37 @@ mysqli_select_db($conn, $dbname);
 //SQL to create the table
 $sql = "CREATE TABLE IF NOT EXISTS Accounts (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    role VARCHAR(10) NOT NULL DEFAULT 'User',
     1name VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
     usersname VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     passkey VARCHAR(20) NOT NULL
 )";
+// Check if an admin already exists
+$sql_check_admin = "SELECT * FROM Accounts WHERE `role` = 'admin' LIMIT 1";
+$result = mysqli_query($conn, $sql_check_admin);
 
+if (mysqli_num_rows($result) == 0) {
+    // Insert an admin if no admin exists
+    $admin_firstname = "Admin";
+    $admin_lastname = "";
+    $admin_email = "";
+    $admin_username = "admin";
+    $admin_passkey = "admin";
+
+    // SQL to insert the admin
+    $sql_insert_admin = "INSERT INTO Accounts (role, 1name, lastname, email, usersname, passkey) 
+                         VALUES ('admin', '$admin_firstname', '$admin_lastname', '$admin_email', '$admin_username', '$admin_passkey')";
+
+    if (mysqli_query($conn, $sql_insert_admin)) {
+        echo "";
+    } else {
+        echo "Error inserting admin: " . mysqli_error($conn);
+    }
+} else {
+    echo "";
+}
 // Exercute the query to create the table
 if (mysqli_query($conn, $sql)) {
     echo "";
