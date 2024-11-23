@@ -16,7 +16,7 @@ echo '
             </div>
         </div>
     </li>
-    <li><a href="./enquiry.php">Enquiry</a></li>
+    <li><a href="./Enquiry-register.php">Enquiry</a></li>
     <li><a href="./identify_page.php">Identify</a></li>
     <li><a href="./contribution.php">Contribute</a></li>
 </ul>
