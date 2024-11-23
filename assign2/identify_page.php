@@ -6,6 +6,7 @@
 	<meta name="author" content="Kai Seng">
 	<meta name="description" content="Identify Herbarium">
 	<meta name="keywords" content="keyword1, keyword2, keyword3, etc">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <title>Identify Page</title>
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
