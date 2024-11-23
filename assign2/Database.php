@@ -58,6 +58,14 @@ $sql = "CREATE TABLE IF NOT EXISTS Accounts (
     email VARCHAR(50) NOT NULL,
     passkey VARCHAR(20) NOT NULL
 )";
+// Exercute the query to create the table
+if (mysqli_query($conn, $sql)) {
+    echo "";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+    //select the database
+mysqli_select_db($conn, $dbname);
 // Check if an admin already exists
 $sql_check_admin = "SELECT * FROM Accounts WHERE `role` = 'admin' LIMIT 1";
 $result = mysqli_query($conn, $sql_check_admin);
@@ -82,14 +90,7 @@ if (mysqli_num_rows($result) == 0) {
 } else {
     echo "";
 }
-// Exercute the query to create the table
-if (mysqli_query($conn, $sql)) {
-    echo "";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}
-    //select the database
-mysqli_select_db($conn, $dbname);
+
 
 //SQL to create the table
 $sql = "CREATE TABLE IF NOT EXISTS Contributions (
