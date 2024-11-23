@@ -8,6 +8,7 @@
     <meta name="author" content="Mohamad Faridz Faisal Bin Mohamad Isham" />
     <title>Herbarium Log In</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 </head>
 <body class="login_color">
 <?php include "./include/navbar.php" ?>
