@@ -71,7 +71,7 @@
                     // Insert data into the database
                     $sql = "INSERT INTO Contributions (plantName, plantFamily, plantGenus, plantSpecies, freshLeafPhoto, herbariumPhoto, submission_date)
                     VALUES (?, ?, ?, ?, ?, ?, NOW())";
-            $stmt = mysqli_prepare($conn, $sql);
+                    $stmt = mysqli_prepare($conn, $sql);
 
                     if ($stmt) {
                     mysqli_stmt_bind_param($stmt, "ssssss", $plantName, $plantFamily, $plantGenus, $plantSpecies, $freshLeafPhotoPath, $herbariumPhotoPath);
