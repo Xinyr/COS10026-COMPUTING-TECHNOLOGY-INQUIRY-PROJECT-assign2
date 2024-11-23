@@ -22,7 +22,7 @@
                 <h1 class="h1-contribution">Contribution Page</h1>
                 <p>Please fill out the form below to contribute plant information to the herbarium collection.</p>
     
-                <form class="form-contribution" action="/submit-contribution" method="post" enctype="multipart/form-data">
+                <form class="form-contribution" action="./contribution-confirm.php" method="post" enctype="multipart/form-data">
                     <!-- Plant Name -->
                     <label class="label-contribution" for="plantName">Plant Name:</label>
                     <input class="input-contribution" type="text" id="plantName" name="plantName" maxlength="25"
