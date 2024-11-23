@@ -17,6 +17,7 @@
 <table class="Enquiry_Table">
     <tr>
         <th>ID</th>
+        <th>Role</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email Address</th>
@@ -175,6 +176,7 @@
                 ?>
                 <tr>    
                     <td><?php echo htmlspecialchars($row["id"]); ?></td>
+                    <td><?php echo htmlspecialchars($row["role"]); ?></td>
                     <td><?php echo htmlspecialchars($row["1name"]); ?></td>
                     <td><?php echo htmlspecialchars($row["lastname"]); 'N/A'; ?></td>
                     <td><?php echo htmlspecialchars($row["email"]); ?></td>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in and has an admin role
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    // Redirect to login page if not authorized
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="profile_page faridz">
     <head>
