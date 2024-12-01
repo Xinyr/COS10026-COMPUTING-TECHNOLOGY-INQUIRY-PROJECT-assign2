@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Redirect to access denied page if the user is not logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: access_denied.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
