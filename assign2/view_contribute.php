@@ -25,6 +25,7 @@
                     <th width="150px">Plant Species</th>
                     <th width="100px">Photo Upload(Fresh Leaf)</th>
                     <th width="100px">Photo Upload(Herbarium)</th>
+                    <th width="100px">Submission date</th>
 
                 </tr>
 
@@ -64,7 +65,7 @@
                 ?>
 
                     <tr>
-                        <td><?php echo $no++; ?></td>
+                        <td><?php echo htmlspecialchars($row["id"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantName"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantFamily"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantGenus"]); ?></td>
@@ -87,7 +88,7 @@
                                 }
                             ?>
                         </td>
-                        <td><?php echo htmlspecialchars($row["created_at"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["submission_date"]); ?></td>
                     </tr>
 
         <?php 
