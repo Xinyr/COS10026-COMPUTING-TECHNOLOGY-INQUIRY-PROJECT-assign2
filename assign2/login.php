@@ -1,6 +1,16 @@
 <?php
-// Start session to save login status
 session_start();
+
+// Redirect logged-in users
+if (isset($_SESSION['user_id'])) {
+    // Redirect based on user role
+    if ($_SESSION['role'] == 'admin') {
+        header("Location: admin_view.php"); // Redirect admin users
+    } else {
+        header("Location: dashboard.php"); // Redirect regular users
+    }
+    exit;
+}
 
 // Database credentials
 $servername = "localhost";
@@ -8,9 +18,7 @@ $username = "root";
 $password = "";
 $dbname = "Herbarium_DB";
 
-// Check if the login button is clicked
 if (isset($_POST['login'])) {
-    // Get username and password from the form
     $usersname = $_POST['usersname'];
     $passkey = $_POST['passkey'];
 
@@ -20,30 +28,27 @@ if (isset($_POST['login'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Prepare SQL to prevent SQL injection
-    $sql = "SELECT * FROM Accounts WHERE usersname = ?"; 
+    $sql = "SELECT * FROM Accounts WHERE usersname = ?";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, 's', $usersname); // Bind the correct variable
+    mysqli_stmt_bind_param($stmt, 's', $usersname);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
     // Check if the user exists
     if ($row = mysqli_fetch_assoc($result)) {
         // Verify the password
-        if ($passkey === $row['passkey']) {  // Assuming passwords are hashed2
-            // Set session variables
+        if ($passkey === $row['passkey']) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['usersname'];
-            $_SESSION['role'] = $row['role']; // Optionally store the user's role
+            $_SESSION['role'] = $row['role'];
 
             // Redirect based on role
             if ($_SESSION['role'] == 'admin') {
-                header("Location: admin_view.php");  // Redirect to admin page
-                exit;
+                header("Location: admin_view.php");
             } else {
-                header("Location: user_dashboard.php"); // Redirect to regular user page
-                exit;
+                header("Location: dashboard.php");
             }
+            exit;
         } else {
             echo "Invalid password.";
         }
@@ -51,11 +56,11 @@ if (isset($_POST['login'])) {
         echo "User not found.";
     }
 
-    // Close connection
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,24 +75,24 @@ if (isset($_POST['login'])) {
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 </head>
 <body class="login_color">
-<?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.php" ?> 
     <div class="form">
         <div class="boxlogin">
-                <h1>Log In </h1>
-            </div>
-       
+            <h1>Log In</h1>
+        </div>
         <div class="logincontainer">
-        <div class="loginform">
+            <div class="loginform">
                 <div class="form-section">
                     <form method="post" action="login.php">
                         <h2>Log in here</h2>
                         <label for="usersname">Username:</label>
-                        <input type="text" name="usersname" id="usersname" required="required" placeholder="Username/Email:"> <br> <br>
+                        <input type="text" name="usersname" id="usersname" required placeholder="Username/Email:" /> 
+                        <br><br>
                         <label for="passkey">Password:</label>
-                        <input type="password" name="passkey" id="passkey" required="required" placeholder="Password:"> <!-- Corrected type -->
+                        <input type="password" name="passkey" id="passkey" required placeholder="Password:" />
                         <br>
                         <div class="padding20">
-                        <button type="submit" name="login">Login</button>
+                            <button type="submit" name="login">Login</button>
                         </div><br>
                         <a href="./register.php">Haven't made an account yet?</a>
                     </form>

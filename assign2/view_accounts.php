@@ -191,7 +191,7 @@
                     <td>
                         <form class="change_admin" method="POST" action="">
                             <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                            <button type="submit" name="change_p">Change Password</button>
+                            <button type="submit" name="change_p">Change Password</button>  
                         </form>
                     </td>
                     <td>
