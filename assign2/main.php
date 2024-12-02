@@ -11,6 +11,7 @@
     </head>
     <body class="index_body">
     <?php include "./include/navbar.php" ?>
+    <?php include "./Database.php" ?>
         
         <iframe src="backgroundimage.html" title="index page background"></iframe>
         <!-- iframes are used here to help mitigate the blurry edges of a blurred image -->
