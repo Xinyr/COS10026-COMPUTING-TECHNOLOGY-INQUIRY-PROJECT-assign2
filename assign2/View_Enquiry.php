@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 <h1>Enquiry List</h1>
 
 <table class="Enquiry_Table">
-    <tr><td>
+    <tr>
         <th>No</th>
         <th>First Name</th>
         <th>Last Name</th>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
         <th>Postcode</th>
         <th>Phone Number</th>
         <th>Tutorial</th>
-    </tr></td>
+    </tr>
 
     <?php
     $servername = "localhost";
@@ -63,7 +63,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                 <tr>
                     <td><?php echo htmlspecialchars($row["id"]); ?></td>
                     <td><?php echo htmlspecialchars($row["firstName"]); ?></td>
-                    <td><?php echo isset($row["lastName"]) ? htmlspecialchars($row["lastName"]) : 'N/A'; ?></td>
+                    <td><?php echo htmlspecialchars($row["lastname"]); ?></td>
                     <td><?php echo htmlspecialchars($row["email"]); ?></td>
                     <td><?php echo htmlspecialchars($row["streetAddress"]); ?></td>
                     <td><?php echo htmlspecialchars($row["city"]); ?></td>
