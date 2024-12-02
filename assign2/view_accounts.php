@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in and has an admin role
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    // Redirect to login page if not authorized 
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +115,7 @@
     }
     if (isset($_POST['update_password'])) {
         $user_id = $_POST['user_id'];
-        $new_password = ($_POST['new_password']); // Hash the new password
+        $new_password = ($_POST['new_password']);
     
         // Database connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -147,7 +157,7 @@
     }
     if (isset($_POST['update_username'])) {
         $user_id = $_POST['user_id'];
-        $new_username = ($_POST['new_username']); // Hash the new password
+        $new_username = ($_POST['new_username']); 
     
         // Database connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
