@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body>
-        <?php include "./include/navbar.php" ?>
+        <?php include "./include/navbar.inc" ?>
         <div class="about_me">
             <div class="about_me_name"><strong>Frederick Bartholomew Sii Dao Xiang</strong></div>
             <section>Student Number: 104397146 <br />Bachelor of Computer Science</section>
@@ -114,6 +114,6 @@
             <br />
             <a href="mailto:104397146@students.swinburne.edu.my" class="mail_me_button">Email me!</a>
         </div>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
     </body>
 </html>

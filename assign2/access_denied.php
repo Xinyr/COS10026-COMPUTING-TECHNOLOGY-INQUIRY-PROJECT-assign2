@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body class="login_color">
-    <?php include "./include/navbar.php"; ?> 
+    <?php include "./include/navbar.inc" ?> 
 
     <div class="form">
         <h1>Access Denied</h1>
@@ -19,6 +19,6 @@
         <a href="login.php">Click here to log in</a>
     </div>
 
-    <?php include "./include/footer.php"; ?>
+    <?php include "./include/footer.inc"; ?>
 </body>
 </html>

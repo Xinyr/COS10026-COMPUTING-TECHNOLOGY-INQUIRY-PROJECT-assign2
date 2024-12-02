@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
             <ul class="right-bar">
                 <li><a href="./about_me_hub.html">About us</a></li>
                 <li><a href="./login.html">Login/ Sign up</a></li>
@@ -114,6 +114,6 @@
         <br />
         <a href="mailto:" class="mail_me_button">Email me!</a>
     </div>
-    <?php include "./include/footer.php" ?>
+    <?php include "./include/footer.inc" ?>
 </body>
 </html>

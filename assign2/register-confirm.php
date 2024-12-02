@@ -10,7 +10,7 @@
 </head>
 
 <body class="login_color">
-<?php include "./include/navbar.php" ?>
+<?php include "./include/navbar.inc" ?>
     <div class="form">
         <div class="boxlogin">
             <h1>Registration Confirmation</h1>
@@ -68,7 +68,7 @@
         </div>
         </div>
     </div>
-    <?php include "./include/footer.php"; ?>
+    <?php include "./include/footer.inc"; ?>
 </body>
 
 </html>

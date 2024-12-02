@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body class="login_color">
-<?php include "./include/navbar.php" ?>
+<?php include "./include/navbar.inc" ?>
     <div class="form">
         <div class="boxlogin">
                 <h1>Registration </h1>
@@ -38,5 +38,5 @@
             </div>
         </div> 
     </div>
-    <?php include "./include/footer.php" ?>
+    <?php include "./include/footer.inc" ?>
 </body>

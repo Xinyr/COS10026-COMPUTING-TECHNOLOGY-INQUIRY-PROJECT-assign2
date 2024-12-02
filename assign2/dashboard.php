@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 </head>
 <body class="login_color">
-    <?php include "./include/navbar.php" ?> 
+    <?php include "./include/navbar.inc" ?> 
     <div class="margin20percenttop">
         <div class="logincontainer">
             <div class="loginform">
@@ -37,6 +37,6 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div> 
     </div> 
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
 </body>
 </html>

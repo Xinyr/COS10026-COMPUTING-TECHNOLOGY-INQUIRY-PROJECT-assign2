@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
 <body class="identify">
-   <?php include "./include/navbar.php" ?>
+   <?php include "./include/navbar.inc" ?>
   
 <body class="identify">
 <?php
@@ -101,7 +101,7 @@ $plantImages = [
 </html>
 
     <footer>
-         <?php include "./include/footer.php" ?>
+         <?php include "./include/footer.inc" ?>
     </footer>
     </body>
 </html>

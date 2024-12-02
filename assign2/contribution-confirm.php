@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include "./include/navbar.php"; ?>
+    <?php include "./include/navbar.inc"; ?>
     <div class="body_contribution">
         <div class="contribution-image-container">
             <div class="contribution-image-section">
@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <?php include "./include/footer.php"; ?>
+    <?php include "./include/footer.inc"; ?>
 </body>
 
 </html>

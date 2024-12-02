@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 
 <body class ="view_contribute">
-    <?php include './include/admin_navbar.php'?>
+    <?php include './include/admin_navbar.inc'?>
     <div class="admin_page">
         <h1>Contribution Page</h1>
 

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body>
-        <?php include "./include/navbar.php" ?>
+        <?php include "./include/navbar.inc" ?>
         <div class="about_me">
             <div class="about_me_name"><strong>Mohamad Faridz Faisal Bin Mohamad Isham</strong></div>
             <section>Student Number: 104396635 <br />Bachelor of Computer Science</section>
@@ -103,6 +103,6 @@
             <br />
             <a href="mailto:*insert*" class="mail_me_button">Email me!</a>
         </div>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
     </body>
 </html>

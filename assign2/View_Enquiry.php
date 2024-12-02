@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 </head>
 <body class="ViewEnquiry">
     
-<?php include "./include/admin_navbar.php" ?>
+<?php include "./include/admin_navbar.inc" ?>
 <div class="admin_page">
 <h1>Enquiry List</h1>
 

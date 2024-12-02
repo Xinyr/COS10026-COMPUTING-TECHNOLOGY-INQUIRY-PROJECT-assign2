@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <?php include "./include/navbar.php" ; ?>
+    <?php include "./include/navbar.inc" ; ?>
     <div class="body_contribution">
         <div class="contribution-image-container">
             <!-- Left section with the image -->
@@ -109,7 +109,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
-    <?php include "./include/footer.php" ; ?>
+    <?php include "./include/footer.inc" ; ?>
 
 </body>
 
