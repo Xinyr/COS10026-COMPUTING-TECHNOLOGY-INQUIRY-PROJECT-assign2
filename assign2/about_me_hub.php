@@ -55,7 +55,7 @@
                   <img class="flip_profile_img" src="./images/kelvin.jpg" alt="Kelvin">
                 </div>
                 <div class="flip_card_back">
-                  <h1><a href="./kelvin.html">Kevin</a></h1> 
+                  <h1><a href="./kelvin.php">Kevin</a></h1> 
                   <p>Group member</p> 
                 </div>
               </div>

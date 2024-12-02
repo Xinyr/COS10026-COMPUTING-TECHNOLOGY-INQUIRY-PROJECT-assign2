@@ -21,58 +21,61 @@
                 <h2 class="enquiry_h2">Enquiry Confirmation</h2>
 
                 <?php
-                    // Include database connection
-                    include('connection.php');
+                // Include database connection
+                include('connection.php');
 
-                    // Retrieve form data
-                    $firstName = $_POST['firstName'];
-                    $lastName = $_POST['lastName'];
-                    $email = $_POST['email'];
-                    $streetAddress = $_POST['streetAddress'];
-                    $city = $_POST['city'];
-                    $state = $_POST['state'];
-                    $postcode = $_POST['postcode'];
-                    $phone = $_POST['phone'];
-                    $tutorial = $_POST['tutorial'];
+                // Retrieve form data
+                $firstName = $_POST['firstName'];
+                $lastName = $_POST['lastName'];
+                $email = $_POST['email'];
+                $streetAddress = $_POST['streetAddress'];
+                $city = $_POST['city'];
+                $state = $_POST['state'];
+                $postcode = $_POST['postcode'];
+                $phone = $_POST['phone'];
+                $tutorial = $_POST['tutorial'];
 
-                    // Database connection details
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "Herbarium_DB";
+                // Database connection details
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "Herbarium_DB";
 
-                    // Establish connection
-                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+                // Establish connection
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-                    // Check connection
-                    if(!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
 
-                    // Insert data into the database
-                    $sql = "INSERT INTO Enquiry_Form (firstName, lastName, email, streetAddress, city, state, postcode, phone, tutorial) 
+                // Insert data into the database
+                $sql = "INSERT INTO Enquiry_Form (firstName, lastName, email, streetAddress, city, state, postcode, phone, tutorial) 
                             VALUES ('$firstName', '$lastName', '$email', '$streetAddress', '$city', '$state', '$postcode', '$phone', '$tutorial')";
 
-                    if (mysqli_query($conn, $sql)) {
-                        echo "<p>Thank you, $firstName $lastName, for your enquiry!</p>";
-                        echo "<p>Your details have been successfully submitted.</p>";
-                        echo "<p>Email: $email</p>";
-                        echo "<p>Address: $streetAddress, $city, $state, $postcode</p>";
-                        echo "<p>Phone: $phone</p>";
-                        echo "<p>Tutorial Selected: $tutorial</p>";
-                    } else {
-                        echo "<p>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
-                    }
+                if (mysqli_query($conn, $sql)) {
+                    echo "<p>Thank you, $firstName $lastName, for your enquiry!</p>";
+                    echo "<fieldset>";
+                    echo "<legend>Submitted Details</legend>";
+                    echo "<p><strong>Email:</strong> $email</p>";
+                    echo "<p><strong>Address:</strong> $streetAddress, $city, $state, $postcode</p>";
+                    echo "<p><strong>Phone:</strong> $phone</p>";
+                    echo "<p><strong>Tutorial Selected:</strong> $tutorial</p>";
+                    echo "</fieldset>";
+                } else {
+                    echo "<p>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
+                }
 
-                    // Close the connection
-                    mysqli_query($conn, $sql);
-                    mysqli_close($conn);
+
+                // Close the connection
+                mysqli_query($conn, $sql);
+                mysqli_close($conn);
                 ?>
 
                 <!-- Return Button -->
-                 <div class="return-button-container">
+                <div class="return-button-container">
                     <a href="Enquiry-register.php" class="Enquiry-confirm-button-return">Return to Enquiry</a>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
