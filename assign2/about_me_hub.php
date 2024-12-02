@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
     <header class="about_me_header">
       <h1>About us!</h1>
     </header>
@@ -73,6 +73,6 @@
           </div>
       </div>
     </div>
-    <?php include "./include/footer.php" ?>
+    <?php include "./include/footer.inc" ?>
   </body>
 </html>

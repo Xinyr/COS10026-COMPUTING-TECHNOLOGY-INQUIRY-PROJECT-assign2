@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include "./include/navbar.php"; ?>
+    <?php include "./include/navbar.inc"; ?>
     <div class="body_contribution">
         <div class="contribution-image-container">
             <div class="contribution-image-section">
@@ -71,7 +71,7 @@
                     // Insert data into the database
                     $sql = "INSERT INTO Contributions (plantName, plantFamily, plantGenus, plantSpecies, freshLeafPhoto, herbariumPhoto, submission_date)
                     VALUES (?, ?, ?, ?, ?, ?, NOW())";
-            $stmt = mysqli_prepare($conn, $sql);
+                    $stmt = mysqli_prepare($conn, $sql);
 
                     if ($stmt) {
                     mysqli_stmt_bind_param($stmt, "ssssss", $plantName, $plantFamily, $plantGenus, $plantSpecies, $freshLeafPhotoPath, $herbariumPhotoPath);
@@ -101,12 +101,12 @@
 
                 <!-- Return Button -->
                  <div class="return-button-container">
-                    <a href="Enquiry-register.php" class="Enquiry-confirm-button-return">Return to Enquiry</a>
+                    <a href="contribution.php" class="Enquiry-confirm-button-return">Return to Contribution</a>
                  </div>
             </div>
         </div>
     </div>
-    <?php include "./include/footer.php"; ?>
+    <?php include "./include/footer.inc"; ?>
 </body>
 
 </html>

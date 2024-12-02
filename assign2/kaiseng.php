@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
 <body>
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
     <div class="about_me">
             <div class="about_me_name kaiseng"><strong>Kai Seng Bong</strong></div>
             <section>Student Number: 104386306 <br />Banchelor of Computer Science</section>
@@ -78,8 +78,6 @@
 		<br/>
 		<a href="mailto:bongkaiseng@gmail.com" class="mail_me_button kaiseng">Email Me!</a>
 	</div>
-    <footer>
-        <?php include "./include/footer.php" ?>
-    </footer>
+    <?php include "./include/footer.inc" ?>
 </body>
 </html>

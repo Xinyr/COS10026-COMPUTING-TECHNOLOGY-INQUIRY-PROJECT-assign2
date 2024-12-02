@@ -8,6 +8,8 @@ echo'
     <li><a href="./View_Enquiry.php">View Enquiry</a></li> <br>
     <li><a href="./view_contribute.php">View Contribute</a></li> <br>
     <li><a href="./view_accounts.php">View Accounts</a></li> <br>
+    <li><a class="tutorialSelectWord"href="logout.php">Log Out</a></li>
+    </div>
 </ul>
 </div>
 '

@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body class="index_body">
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
+    <?php include "./Database.php" ?>
         
         <iframe src="backgroundimage.html" title="index page background"></iframe>
         <!-- iframes are used here to help mitigate the blurry edges of a blurred image -->
@@ -25,6 +26,6 @@
                 </div>
             </div>
         </div>
-    <?php include "./include/footer.php" ?>
+    <?php include "./include/footer.inc" ?>
     </body>
 </html>

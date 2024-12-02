@@ -11,7 +11,7 @@
 </head>
 <body>
 <body class="care_page">
-   <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
 
     <header>
         <h1><?php echo"How to Preserve Your Herbarium"; ?></h1>
@@ -66,7 +66,7 @@
 
     </article>
 <footer>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
  </footer>
  </body>
 </html>

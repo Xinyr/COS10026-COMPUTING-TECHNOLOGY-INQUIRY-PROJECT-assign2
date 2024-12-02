@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in and has an admin role
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    // Redirect to login page if not authorized 
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +22,7 @@
 
 
 <body class ="view_contribute">
-    <?php include './include/admin_navbar.php'?>
+    <?php include './include/admin_navbar.inc'?>
     <div class="admin_page">
         <h1>Contribution Page</h1>
 
@@ -25,6 +35,7 @@
                     <th width="150px">Plant Species</th>
                     <th width="100px">Photo Upload(Fresh Leaf)</th>
                     <th width="100px">Photo Upload(Herbarium)</th>
+                    <th width="100px">Submission date</th>
 
                 </tr>
 
@@ -64,7 +75,7 @@
                 ?>
 
                     <tr>
-                        <td><?php echo $no++; ?></td>
+                        <td><?php echo htmlspecialchars($row["id"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantName"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantFamily"]); ?></td>
                         <td><?php echo htmlspecialchars($row["plantGenus"]); ?></td>
@@ -87,7 +98,7 @@
                                 }
                             ?>
                         </td>
-                        <td><?php echo htmlspecialchars($row["created_at"]); ?></td>
+                        <td><?php echo htmlspecialchars($row["submission_date"]); ?></td>
                     </tr>
 
         <?php 

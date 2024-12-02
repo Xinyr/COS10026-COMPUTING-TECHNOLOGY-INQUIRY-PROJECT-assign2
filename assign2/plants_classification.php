@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body class="classification_body">
-        <?php include "./include/navbar.php" ?>
+        <?php include "./include/navbar.inc" ?>
         <header class="classification_header">
             <h1>Plants Classification</h1>
         </header>
@@ -60,6 +60,6 @@
             
             </div>
         </div>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
     </body>
 </html>

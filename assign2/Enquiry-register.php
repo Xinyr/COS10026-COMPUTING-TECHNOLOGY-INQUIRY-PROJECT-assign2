@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include "./include/navbar.php"; ?>
+    <?php include "./include/navbar.inc"; ?>
     <?php include ('Database.php'); ?>
 
     <div class="body_enquiry">
@@ -93,7 +93,7 @@
             </div>
         </div>
     </div>
-    <?php include "./include/footer.php" ; ?>
+    <?php include "./include/footer.inc" ; ?>
 
 </body>
 

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body class="tutorialBody">
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
         <div>
             <h1 class="tutorialH1">Tools</h1>
             <h2 class="tutorialH2">Tools used in herbarium</h2>
@@ -96,5 +96,5 @@
                 </aside>
             </section>
         </section>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
     </body>

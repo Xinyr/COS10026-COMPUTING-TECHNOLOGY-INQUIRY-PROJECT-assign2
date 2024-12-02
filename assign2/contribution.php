@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Redirect to access denied page if the user is not logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: access_denied.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +19,7 @@
 </head>
 
 <body>
-    <?php include "./include/navbar.php" ; ?>
+    <?php include "./include/navbar.inc" ; ?>
     <div class="body_contribution">
         <div class="contribution-image-container">
             <!-- Left section with the image -->
@@ -100,7 +109,7 @@
             </div>
         </div>
     </div>
-    <?php include "./include/footer.php" ; ?>
+    <?php include "./include/footer.inc" ; ?>
 
 </body>
 

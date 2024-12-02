@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body>
-    <?php include "./include/navbar.php" ?>
+    <?php include "./include/navbar.inc" ?>
         <div class="enhance">
             <div class="enhanceframe">
                 <h1>Slideshow</h1>
@@ -98,6 +98,6 @@
                 <h3>Used in: <a class="ebutton" href="./care.html">Care</a></h3>
             </div>
         </div>
-        <?php include "./include/footer.php" ?>
+        <?php include "./include/footer.inc" ?>
     </body>
 </html>
