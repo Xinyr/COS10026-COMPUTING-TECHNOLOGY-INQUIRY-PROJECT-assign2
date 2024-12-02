@@ -101,7 +101,7 @@
 
                 <!-- Return Button -->
                  <div class="return-button-container">
-                    <a href="Enquiry-register.php" class="Enquiry-confirm-button-return">Return to Enquiry</a>
+                    <a href="contribution.php" class="Enquiry-confirm-button-return">Return to Contribution</a>
                  </div>
             </div>
         </div>
